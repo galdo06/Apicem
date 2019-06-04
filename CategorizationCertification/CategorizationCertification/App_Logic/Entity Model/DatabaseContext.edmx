@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmployeeDB_Model_NS.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EmployeeDB_Model_NSStoreContainer">
+          <EntitySet Name="Organisms" EntityType="EmployeeDB_Model_NS.Store.Organisms" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrganismTypes" EntityType="EmployeeDB_Model_NS.Store.OrganismTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Project_Organisms" EntityType="EmployeeDB_Model_NS.Store.Project_Organisms" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Projects" EntityType="EmployeeDB_Model_NS.Store.Projects" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Organisms_OrganismTypes" Association="EmployeeDB_Model_NS.Store.FK_Organisms_OrganismTypes">
+            <End Role="OrganismTypes" EntitySet="OrganismTypes" />
+            <End Role="Organisms" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectOrganisms_Organisms" Association="EmployeeDB_Model_NS.Store.FK_ProjectOrganisms_Organisms">
+            <End Role="Organisms" EntitySet="Organisms" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectOrganisms_Projects" Association="EmployeeDB_Model_NS.Store.FK_ProjectOrganisms_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Organisms">
+          <Key>
+            <PropertyRef Name="OrganismID" />
+          </Key>
+          <Property Name="OrganismID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganismTypeID" Type="int" Nullable="false" />
+          <Property Name="CommonName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ScientificName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrganismTypes">
+          <Key>
+            <PropertyRef Name="OrganismTypeID" />
+          </Key>
+          <Property Name="OrganismTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganismTypeName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Project_Organisms">
+          <Key>
+            <PropertyRef Name="ProjectOrganismID" />
+          </Key>
+          <Property Name="ProjectOrganismID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="OrganismID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Organisms_OrganismTypes">
+          <End Role="OrganismTypes" Type="EmployeeDB_Model_NS.Store.OrganismTypes" Multiplicity="1" />
+          <End Role="Organisms" Type="EmployeeDB_Model_NS.Store.Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganismTypes">
+              <PropertyRef Name="OrganismTypeID" />
+            </Principal>
+            <Dependent Role="Organisms">
+              <PropertyRef Name="OrganismTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectOrganisms_Organisms">
+          <End Role="Organisms" Type="EmployeeDB_Model_NS.Store.Organisms" Multiplicity="1" />
+          <End Role="Project_Organisms" Type="EmployeeDB_Model_NS.Store.Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisms">
+              <PropertyRef Name="OrganismID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="OrganismID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectOrganisms_Projects">
+          <End Role="Projects" Type="EmployeeDB_Model_NS.Store.Projects" Multiplicity="1" />
+          <End Role="Project_Organisms" Type="EmployeeDB_Model_NS.Store.Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model_Namespace" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DatabaseContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Organisms" EntityType="Model_Namespace.Organism" />
+          <EntitySet Name="OrganismTypes" EntityType="Model_Namespace.OrganismType" />
+          <EntitySet Name="Project_Organisms" EntityType="Model_Namespace.Project_Organisms" />
+          <EntitySet Name="Projects" EntityType="Model_Namespace.Project" />
+          <AssociationSet Name="FK_Organisms_OrganismTypes" Association="Model_Namespace.FK_Organisms_OrganismTypes">
+            <End Role="OrganismType" EntitySet="OrganismTypes" />
+            <End Role="Organism" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectOrganisms_Organisms" Association="Model_Namespace.FK_ProjectOrganisms_Organisms">
+            <End Role="Organism" EntitySet="Organisms" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectOrganisms_Projects" Association="Model_Namespace.FK_ProjectOrganisms_Projects">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Organism">
+          <Key>
+            <PropertyRef Name="OrganismID" />
+          </Key>
+          <Property Type="Int32" Name="OrganismID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="OrganismTypeID" Nullable="false" />
+          <Property Type="String" Name="CommonName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ScientificName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="OrganismType" Relationship="Model_Namespace.FK_Organisms_OrganismTypes" FromRole="Organism" ToRole="OrganismType" />
+          <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_ProjectOrganisms_Organisms" FromRole="Organism" ToRole="Project_Organisms" />
+        </EntityType>
+        <EntityType Name="OrganismType">
+          <Key>
+            <PropertyRef Name="OrganismTypeID" />
+          </Key>
+          <Property Type="Int32" Name="OrganismTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OrganismTypeName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Organisms" Relationship="Model_Namespace.FK_Organisms_OrganismTypes" FromRole="OrganismType" ToRole="Organism" />
+        </EntityType>
+        <EntityType Name="Project_Organisms">
+          <Key>
+            <PropertyRef Name="ProjectOrganismID" />
+          </Key>
+          <Property Type="Int32" Name="ProjectOrganismID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProjectID" Nullable="false" />
+          <Property Type="Int32" Name="OrganismID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Organism" Relationship="Model_Namespace.FK_ProjectOrganisms_Organisms" FromRole="Project_Organisms" ToRole="Organism" />
+          <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_ProjectOrganisms_Projects" FromRole="Project_Organisms" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Type="Int32" Name="ProjectID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ProjectName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_ProjectOrganisms_Projects" FromRole="Project" ToRole="Project_Organisms" />
+        </EntityType>
+        <Association Name="FK_Organisms_OrganismTypes">
+          <End Type="Model_Namespace.OrganismType" Role="OrganismType" Multiplicity="1" />
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganismType">
+              <PropertyRef Name="OrganismTypeID" />
+            </Principal>
+            <Dependent Role="Organism">
+              <PropertyRef Name="OrganismTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectOrganisms_Organisms">
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="1" />
+          <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organism">
+              <PropertyRef Name="OrganismID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="OrganismID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectOrganisms_Projects">
+          <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeDB_Model_NSStoreContainer" CdmEntityContainer="DatabaseContext">
+          <EntitySetMapping Name="Organisms">
+            <EntityTypeMapping TypeName="Model_Namespace.Organism">
+              <MappingFragment StoreEntitySet="Organisms">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ScientificName" ColumnName="ScientificName" />
+                <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+                <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+                <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganismTypes">
+            <EntityTypeMapping TypeName="Model_Namespace.OrganismType">
+              <MappingFragment StoreEntitySet="OrganismTypes">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OrganismTypeName" ColumnName="OrganismTypeName" />
+                <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Organisms">
+            <EntityTypeMapping TypeName="Model_Namespace.Project_Organisms">
+              <MappingFragment StoreEntitySet="Project_Organisms">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectOrganismID" ColumnName="ProjectOrganismID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="Model_Namespace.Project">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DatabaseContext" ZoomLevel="109" ShowGrid="false" SnapToGrid="false" DisplayType="true">
+        <EntityTypeShape EntityType="Model_Namespace.Organism" Width="1.5" PointX="0.84835199492441116" PointY="17.121628873572512" />
+        <EntityTypeShape EntityType="Model_Namespace.OrganismType" Width="1.5" PointX="1.2018838455909322" PointY="20.478572542070676" />
+        <EntityTypeShape EntityType="Model_Namespace.Project_Organisms" Width="1.5" PointX="2.2214108827623589" PointY="12.826806938660706" />
+        <EntityTypeShape EntityType="Model_Namespace.Project" Width="1.5" PointX="11.191328186165229" PointY="12.0202186163609" />
+        <AssociationConnector Association="Model_Namespace.FK_Organisms_OrganismTypes" />
+        <AssociationConnector Association="Model_Namespace.FK_ProjectOrganisms_Organisms" />
+        <AssociationConnector Association="Model_Namespace.FK_ProjectOrganisms_Projects" />
+      </Diagram></Diagrams>
+  </Designer>
+</edmx:Edmx>

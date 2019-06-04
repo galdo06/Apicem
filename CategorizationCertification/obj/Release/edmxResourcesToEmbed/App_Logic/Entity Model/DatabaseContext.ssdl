@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeDB_Model_NS.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EmployeeDB_Model_NSStoreContainer">
+    <EntitySet Name="Organisms" EntityType="EmployeeDB_Model_NS.Store.Organisms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrganismTypes" EntityType="EmployeeDB_Model_NS.Store.OrganismTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Project_Organisms" EntityType="EmployeeDB_Model_NS.Store.Project_Organisms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Projects" EntityType="EmployeeDB_Model_NS.Store.Projects" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Organisms_OrganismTypes" Association="EmployeeDB_Model_NS.Store.FK_Organisms_OrganismTypes">
+      <End Role="OrganismTypes" EntitySet="OrganismTypes" />
+      <End Role="Organisms" EntitySet="Organisms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectOrganisms_Organisms" Association="EmployeeDB_Model_NS.Store.FK_ProjectOrganisms_Organisms">
+      <End Role="Organisms" EntitySet="Organisms" />
+      <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectOrganisms_Projects" Association="EmployeeDB_Model_NS.Store.FK_ProjectOrganisms_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Organisms">
+    <Key>
+      <PropertyRef Name="OrganismID" />
+    </Key>
+    <Property Name="OrganismID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrganismTypeID" Type="int" Nullable="false" />
+    <Property Name="CommonName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ScientificName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="EditedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrganismTypes">
+    <Key>
+      <PropertyRef Name="OrganismTypeID" />
+    </Key>
+    <Property Name="OrganismTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrganismTypeName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="EditedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project_Organisms">
+    <Key>
+      <PropertyRef Name="ProjectOrganismID" />
+    </Key>
+    <Property Name="ProjectOrganismID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectID" Type="int" Nullable="false" />
+    <Property Name="OrganismID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="EditedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="EditedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Organisms_OrganismTypes">
+    <End Role="OrganismTypes" Type="EmployeeDB_Model_NS.Store.OrganismTypes" Multiplicity="1" />
+    <End Role="Organisms" Type="EmployeeDB_Model_NS.Store.Organisms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrganismTypes">
+        <PropertyRef Name="OrganismTypeID" />
+      </Principal>
+      <Dependent Role="Organisms">
+        <PropertyRef Name="OrganismTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectOrganisms_Organisms">
+    <End Role="Organisms" Type="EmployeeDB_Model_NS.Store.Organisms" Multiplicity="1" />
+    <End Role="Project_Organisms" Type="EmployeeDB_Model_NS.Store.Project_Organisms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organisms">
+        <PropertyRef Name="OrganismID" />
+      </Principal>
+      <Dependent Role="Project_Organisms">
+        <PropertyRef Name="OrganismID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectOrganisms_Projects">
+    <End Role="Projects" Type="EmployeeDB_Model_NS.Store.Projects" Multiplicity="1" />
+    <End Role="Project_Organisms" Type="EmployeeDB_Model_NS.Store.Project_Organisms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Project_Organisms">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

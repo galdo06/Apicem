@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model_Namespace" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DatabaseContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Organisms" EntityType="Model_Namespace.Organism" />
+    <EntitySet Name="OrganismTypes" EntityType="Model_Namespace.OrganismType" />
+    <EntitySet Name="Project_Organisms" EntityType="Model_Namespace.Project_Organisms" />
+    <EntitySet Name="Projects" EntityType="Model_Namespace.Project" />
+    <AssociationSet Name="FK_Organisms_OrganismTypes" Association="Model_Namespace.FK_Organisms_OrganismTypes">
+      <End Role="OrganismType" EntitySet="OrganismTypes" />
+      <End Role="Organism" EntitySet="Organisms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectOrganisms_Organisms" Association="Model_Namespace.FK_ProjectOrganisms_Organisms">
+      <End Role="Organism" EntitySet="Organisms" />
+      <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectOrganisms_Projects" Association="Model_Namespace.FK_ProjectOrganisms_Projects">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Organism">
+    <Key>
+      <PropertyRef Name="OrganismID" />
+    </Key>
+    <Property Type="Int32" Name="OrganismID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="OrganismTypeID" Nullable="false" />
+    <Property Type="String" Name="CommonName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ScientificName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OrganismType" Relationship="Model_Namespace.FK_Organisms_OrganismTypes" FromRole="Organism" ToRole="OrganismType" />
+    <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_ProjectOrganisms_Organisms" FromRole="Organism" ToRole="Project_Organisms" />
+  </EntityType>
+  <EntityType Name="OrganismType">
+    <Key>
+      <PropertyRef Name="OrganismTypeID" />
+    </Key>
+    <Property Type="Int32" Name="OrganismTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="OrganismTypeName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Organisms" Relationship="Model_Namespace.FK_Organisms_OrganismTypes" FromRole="OrganismType" ToRole="Organism" />
+  </EntityType>
+  <EntityType Name="Project_Organisms">
+    <Key>
+      <PropertyRef Name="ProjectOrganismID" />
+    </Key>
+    <Property Type="Int32" Name="ProjectOrganismID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ProjectID" Nullable="false" />
+    <Property Type="Int32" Name="OrganismID" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Organism" Relationship="Model_Namespace.FK_ProjectOrganisms_Organisms" FromRole="Project_Organisms" ToRole="Organism" />
+    <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_ProjectOrganisms_Projects" FromRole="Project_Organisms" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Type="Int32" Name="ProjectID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ProjectName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EditedDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_ProjectOrganisms_Projects" FromRole="Project" ToRole="Project_Organisms" />
+  </EntityType>
+  <Association Name="FK_Organisms_OrganismTypes">
+    <End Type="Model_Namespace.OrganismType" Role="OrganismType" Multiplicity="1" />
+    <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrganismType">
+        <PropertyRef Name="OrganismTypeID" />
+      </Principal>
+      <Dependent Role="Organism">
+        <PropertyRef Name="OrganismTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectOrganisms_Organisms">
+    <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="1" />
+    <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organism">
+        <PropertyRef Name="OrganismID" />
+      </Principal>
+      <Dependent Role="Project_Organisms">
+        <PropertyRef Name="OrganismID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjectOrganisms_Projects">
+    <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1" />
+    <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Project_Organisms">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DatabaseContext-Web.config Connection String" description="DatabaseContext Connection String used in web.config by the application to access the database." defaultValue="metadata=&quot;res://*/App_Logic.Entity Model.DatabaseContext.csdl|res://*/App_Logic.Entity Model.DatabaseContext.ssdl|res://*/App_Logic.Entity Model.DatabaseContext.msl&quot;;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\v11.0;attachdbfilename=|DataDirectory|\CategorizationCertification.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Galdo\\Documents\\Visual\ Studio\ 2012\\Projects\\Eisk\\CategorizationCertification\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DatabaseContext']/@connectionString" />
+  </parameter>
+</parameters>

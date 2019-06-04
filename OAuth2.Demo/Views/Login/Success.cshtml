@@ -1,0 +1,18 @@
+﻿@model OAuth2.Mvc.OAuthResponse
+@{
+    ViewBag.Title = "Success";
+}
+
+<h2>Success</h2>
+
+<p>Redirecting...</p>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $.cookie('@OAuth2.Mvc.OAuthConstants.AuthorzationParam', '@Model.AccessToken', { path: '/', expires: @Model.Expires });
+    if (window.localStorage) {
+        window.localStorage.setItem('refresh_token', '@Model.RefreshToken');
+    }
+    setTimeout(function() { window.location = '@ViewData["ReturnUrl"]' }, 1000);
+});
+</script>

@@ -1,0 +1,7 @@
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\bin\Eisk.Web.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\bin\Eisk.Web.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\bin\EPPlus.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\bin\EPPlus.xml
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\obj\Release\CategorizationCertification.csprojResolveAssemblyReference.cache
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\obj\Release\Eisk.Web.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\obj\Release\Eisk.Web.pdb

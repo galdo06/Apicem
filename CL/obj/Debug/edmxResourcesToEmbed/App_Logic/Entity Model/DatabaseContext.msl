@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeDB_Model_NSStoreContainer" CdmEntityContainer="DatabaseContext">
+    <EntitySetMapping Name="ActionProposeds">
+      <EntityTypeMapping TypeName="Model_Namespace.ActionProposed">
+        <MappingFragment StoreEntitySet="ActionProposed">
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="ActionProposedDesc" ColumnName="ActionProposedDesc" />
+          <ScalarProperty Name="ActionProposedID" ColumnName="ActionProposedID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Application_Groups">
+      <EntityTypeMapping TypeName="Model_Namespace.Application_Groups">
+        <MappingFragment StoreEntitySet="Application_Groups">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="ApplicationGroupID" ColumnName="ApplicationGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="Model_Namespace.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Model_Namespace.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colors">
+      <EntityTypeMapping TypeName="Model_Namespace.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ColorDesc" ColumnName="ColorDesc" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommonNames">
+      <EntityTypeMapping TypeName="Model_Namespace.CommonName">
+        <MappingFragment StoreEntitySet="CommonNames">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CommonNameDesc" ColumnName="CommonNameDesc" />
+          <ScalarProperty Name="CommonNameID" ColumnName="CommonNameID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conditions">
+      <EntityTypeMapping TypeName="Model_Namespace.Condition">
+        <MappingFragment StoreEntitySet="Condition">
+          <ScalarProperty Name="ConditionDesc" ColumnName="ConditionDesc" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Daps">
+      <EntityTypeMapping TypeName="Model_Namespace.Dap">
+        <MappingFragment StoreEntitySet="Daps">
+          <ScalarProperty Name="DapValue" ColumnName="DapValue" />
+          <ScalarProperty Name="TreeDetailsID" ColumnName="TreeDetailsID" />
+          <ScalarProperty Name="DapID" ColumnName="DapID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="Model_Namespace.Device">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DeviceKey" ColumnName="DeviceKey" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Projects">
+      <EntityTypeMapping TypeName="Model_Namespace.Group_Projects">
+        <MappingFragment StoreEntitySet="Group_Projects">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupProjectID" ColumnName="GroupProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Users">
+      <EntityTypeMapping TypeName="Model_Namespace.Group_Users">
+        <MappingFragment StoreEntitySet="Group_Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupUserID" ColumnName="GroupUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="Model_Namespace.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notification_User">
+      <EntityTypeMapping TypeName="Model_Namespace.Notification_User">
+        <MappingFragment StoreEntitySet="Notification_User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="NotificationUserID" ColumnName="NotificationUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="Model_Namespace.Notification">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="NotificationSubject" ColumnName="NotificationSubject" />
+          <ScalarProperty Name="NotificationDesc" ColumnName="NotificationDesc" />
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisms">
+      <EntityTypeMapping TypeName="Model_Namespace.Organism">
+        <MappingFragment StoreEntitySet="Organisms">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+          <ScalarProperty Name="CommonNameID" ColumnName="CommonNameID" />
+          <ScalarProperty Name="ScientificNameID" ColumnName="ScientificNameID" />
+          <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganismTypes">
+      <EntityTypeMapping TypeName="Model_Namespace.OrganismType">
+        <MappingFragment StoreEntitySet="OrganismTypes">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OrganismTypeName" ColumnName="OrganismTypeName" />
+          <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerimeterPoints">
+      <EntityTypeMapping TypeName="Model_Namespace.PerimeterPoint">
+        <MappingFragment StoreEntitySet="PerimeterPoints">
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="PerimeterID" ColumnName="PerimeterID" />
+          <ScalarProperty Name="PerimeterPointID" ColumnName="PerimeterPointID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perimeters">
+      <EntityTypeMapping TypeName="Model_Namespace.Perimeter">
+        <MappingFragment StoreEntitySet="Perimeters">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsMainPerimeter" ColumnName="IsMainPerimeter" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+          <ScalarProperty Name="PerimeterName" ColumnName="PerimeterName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="PerimeterID" ColumnName="PerimeterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Organisms">
+      <EntityTypeMapping TypeName="Model_Namespace.Project_Organisms">
+        <MappingFragment StoreEntitySet="Project_Organisms">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+          <ScalarProperty Name="ProjectOrganismID" ColumnName="ProjectOrganismID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectInfoes">
+      <EntityTypeMapping TypeName="Model_Namespace.ProjectInfo">
+        <MappingFragment StoreEntitySet="ProjectInfo">
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectInfoTreeLocations">
+      <EntityTypeMapping TypeName="Model_Namespace.ProjectInfoTreeLocation">
+        <MappingFragment StoreEntitySet="ProjectInfoTreeLocation">
+          <ScalarProperty Name="PreviouslyImpacted" ColumnName="PreviouslyImpacted" />
+          <ScalarProperty Name="Mitigation" ColumnName="Mitigation" />
+          <ScalarProperty Name="SocialInterest" ColumnName="SocialInterest" />
+          <ScalarProperty Name="Lots3" ColumnName="Lots3" />
+          <ScalarProperty Name="Lots2" ColumnName="Lots2" />
+          <ScalarProperty Name="Lots1" ColumnName="Lots1" />
+          <ScalarProperty Name="Lots0" ColumnName="Lots0" />
+          <ScalarProperty Name="DistanceBetweenTrees" ColumnName="DistanceBetweenTrees" />
+          <ScalarProperty Name="Acres" ColumnName="Acres" />
+          <ScalarProperty Name="Parkings" ColumnName="Parkings" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectInfoTreeLocationID" ColumnName="ProjectInfoTreeLocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="Model_Namespace.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reps">
+      <EntityTypeMapping TypeName="Model_Namespace.Rep">
+        <MappingFragment StoreEntitySet="Reps">
+          <ScalarProperty Name="RepName" ColumnName="RepName" />
+          <ScalarProperty Name="RepID" ColumnName="RepID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role_Users">
+      <EntityTypeMapping TypeName="Model_Namespace.Role_Users">
+        <MappingFragment StoreEntitySet="Role_Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleUserID" ColumnName="RoleUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Model_Namespace.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScientificNames">
+      <EntityTypeMapping TypeName="Model_Namespace.ScientificName">
+        <MappingFragment StoreEntitySet="ScientificNames">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ScientificNameDesc" ColumnName="ScientificNameDesc" />
+          <ScalarProperty Name="ScientificNameID" ColumnName="ScientificNameID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermsAndConditions">
+      <EntityTypeMapping TypeName="Model_Namespace.TermsAndCondition">
+        <MappingFragment StoreEntitySet="TermsAndConditions">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TermsAndConditionsInnerText" ColumnName="TermsAndConditionsInnerText" />
+          <ScalarProperty Name="TermsAndConditionsID" ColumnName="TermsAndConditionsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="Model_Namespace.Token">
+        <MappingFragment StoreEntitySet="Tokens">
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="TokenTypeID" ColumnName="TokenTypeID" />
+          <ScalarProperty Name="RequestTokenKey" ColumnName="RequestTokenKey" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TokenKey" ColumnName="TokenKey" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TokenTypes">
+      <EntityTypeMapping TypeName="Model_Namespace.TokenType">
+        <MappingFragment StoreEntitySet="TokenType">
+          <ScalarProperty Name="TokenTypeName" ColumnName="TokenTypeName" />
+          <ScalarProperty Name="TokenTypeID" ColumnName="TokenTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreeDetails">
+      <EntityTypeMapping TypeName="Model_Namespace.TreeDetail">
+        <MappingFragment StoreEntitySet="TreeDetails">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Commentary" ColumnName="Commentary" />
+          <ScalarProperty Name="MaritimeZone" ColumnName="MaritimeZone" />
+          <ScalarProperty Name="Littoral" ColumnName="Littoral" />
+          <ScalarProperty Name="ActionProposedID" ColumnName="ActionProposedID" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+          <ScalarProperty Name="Varas" ColumnName="Varas" />
+          <ScalarProperty Name="Dap_Counter" ColumnName="Dap_Counter" />
+          <ScalarProperty Name="Dap" ColumnName="Dap" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ProjectOrganismID" ColumnName="ProjectOrganismID" />
+          <ScalarProperty Name="TreeDetailsID" ColumnName="TreeDetailsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="Model_Namespace.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="PhoneExtension" ColumnName="PhoneExtension" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SecondLastName" ColumnName="SecondLastName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model_Namespace.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+          <ScalarProperty Name="IsChangePassword" ColumnName="IsChangePassword" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="IsOnLine" ColumnName="IsOnLine" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

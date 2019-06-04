@@ -1,0 +1,10 @@
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\bin\OAuth2.Demo.dll
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\bin\OAuth2.Demo.pdb
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\bin\Newtonsoft.Json.dll
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\bin\OAuth2.Mvc.dll
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\bin\OAuth2.Mvc.pdb
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\bin\Newtonsoft.Json.xml
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\obj\Debug\OAuth2.Demo.csprojResolveAssemblyReference.cache
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\obj\Debug\OAuth2.Demo.dll
+C:\Users\Galdo\Desktop\OAuth2\Zip\Source\OAuth2.Demo\obj\Debug\OAuth2.Demo.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Demo\obj\Debug\OAuth2.Demo.csprojResolveAssemblyReference.cache

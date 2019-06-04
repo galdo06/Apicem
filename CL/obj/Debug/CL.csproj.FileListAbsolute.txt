@@ -1,0 +1,15 @@
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\CL.dll.config
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\CL.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\CL.pdb
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\EntityFramework.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\EPPlus.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\Noesis.Javascript.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\System.Json.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\EntityFramework.xml
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\EPPlus.xml
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\bin\Debug\System.Json.xml
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\obj\Debug\CL.csprojResolveAssemblyReference.cache
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\obj\Debug\CL.dll
+C:\Users\Galdo\Documents\Visual Studio 2013\Projects\Eisk\CL\obj\Debug\CL.pdb

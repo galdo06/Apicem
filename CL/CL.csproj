@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E0CFF7C-2D5B-4820-B460-7FB2C2CD9D6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CL</RootNamespace>
+    <AssemblyName>CL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\C#\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\C#\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\C#\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Noesis.Javascript">
+      <HintPath>bin\Noesis.Javascript.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Json">
+      <HintPath>..\C#\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Logic\Business Entities\Business Entities.cs">
+      <DependentUpon>Business Entities.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Logic\Business Entities\TreesSummary.cs" />
+    <Compile Include="App_Logic\Business Entities\TreeDetail.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ActionProposedBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\ApplicationBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ApplicationBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Application_GroupsBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Business Logic Layer.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\CityBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\NotificationBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\NotificationBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Notification_UserBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\ProjectInfoTreeLocationBLL.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ColorBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\CommonNameBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\CommonNamesBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ConditionBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\DapBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\DeviceBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\DeviceBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\GroupBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Group_ProjectsBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Group_UsersBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\OrganismBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\OrganismTypeBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\PerimeterBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\PerimeterPointBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\ProjectBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\ProjectInfoBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\ProjectInfoTreeLocationBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Project_OrganismsBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\RepBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\RoleBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\Role_UsersBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\ScientificNameBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\TermsAndConditionBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\TokenBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\TokenBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\TokenTypeBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\TreeDetailBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\TreesSummaryBLL.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\DapBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\RepBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\TreeDetailBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ExportData.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\GroupBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\OrganismBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\OrganismTypeBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ProjectBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\Project_OrganismBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\RoleBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\ScientificNamesBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\UserBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\UserInfoBLL.Custom.cs" />
+    <Compile Include="App_Logic\Business Logic Layer\UserInfoBLL.Generated.cs">
+      <DependentUpon>Business Logic Layer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Business Logic Layer\UsersBLL.Custom.cs" />
+    <Compile Include="App_Logic\Data Access Layer\Data Access Layer.cs">
+      <DependentUpon>Data Access Layer.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Logic\Data Access Layer\DatabaseContext.Custom.cs" />
+    <Compile Include="App_Logic\Entity Model\ActionProposed.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Application.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Application_Groups.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\City.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Color.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\CommonName.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Condition.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Dap.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\DatabaseContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\DatabaseContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\DatabaseContext.Designer.cs">
+      <DependentUpon>DatabaseContext.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Device.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Group.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Group_Projects.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Group_Users.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Notification.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Notification_User.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Organism.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\OrganismType.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Perimeter.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\PerimeterPoint.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Project.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\ProjectInfo.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\ProjectInfoTreeLocation.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Project_Organisms.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Rep.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Role.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Role_Users.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\ScientificName.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\TermsAndCondition.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\Token.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\TokenType.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\TreeDetail.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\User.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Entity Model\UserInfo.cs">
+      <DependentUpon>DatabaseContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Logic\Helpers\Basic Helpers\MessageFormatter.cs" />
+    <Compile Include="App_Logic\Helpers\ChangePasswordActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\CommonNameActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\Reports.cs" />
+    <Compile Include="App_Logic\Helpers\UserActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\ProjectWithInfoActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\Data Access Helpers\App_Exceptions.cs" />
+    <Compile Include="App_Logic\Helpers\Data Access Helpers\BusinessEntitiesHelper.cs" />
+    <Compile Include="App_Logic\Helpers\Data Access Helpers\DynamicQueryable.cs" />
+    <Compile Include="App_Logic\Helpers\Data Access Helpers\NullAndEmptyValueExtension.cs" />
+    <Compile Include="App_Logic\Helpers\GroupActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\Infrastructure Helpers\Emailer.cs" />
+    <Compile Include="App_Logic\Helpers\OrganismActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\OrganismTypeActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\ProjectActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\ScientificNameActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\UserInfoActionStatus.cs" />
+    <Compile Include="App_Logic\Helpers\Utility.cs" />
+    <Compile Include="App_Logic\Javascript\JavaScriptHelper.cs" />
+    <Compile Include="netfx\System\Guard.cs" />
+    <Compile Include="netfx\System\ISerializer.cs" />
+    <Compile Include="netfx\System\JsonSerializer.cs" />
+    <Compile Include="netfx\System\SerializerExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="App_Logic\Business Entities\Business Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Business Entities.cs</LastGenOutput>
+    </None>
+    <None Include="App_Logic\Business Logic Layer\Business Logic Layer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Business Logic Layer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Logic\Data Access Layer\Data Access Layer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Data Access Layer.cs</LastGenOutput>
+    </None>
+    <None Include="App_Logic\Data Access Layer\DatabaseContext.cd" />
+    <EntityDeploy Include="App_Logic\Entity Model\DatabaseContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseContext.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Eisk.DataAccess</CustomToolNamespace>
+    </EntityDeploy>
+    <None Include="App_Logic\Entity Model\DatabaseContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DatabaseContext.Context.cs</LastGenOutput>
+      <DependentUpon>DatabaseContext.edmx</DependentUpon>
+    </None>
+    <None Include="App_Logic\Entity Model\DatabaseContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DatabaseContext.cs</LastGenOutput>
+      <DependentUpon>DatabaseContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Eisk.DataAccessLayer.DatabaseContext.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Logic\Javascript\proj4js-combined.js" />
+    <Content Include="App_Logic\Javascript\proj4js-compressed.js" />
+    <Content Include="App_Logic\Javascript\proj4js.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Noesis.Javascript.0.7.1.0\NativeBinaries\net40\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Noesis.Javascript.0.7.1.0\NativeBinaries\net40\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

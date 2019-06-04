@@ -1,0 +1,38 @@
+﻿@model OAuth2.Demo.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@if (!String.IsNullOrEmpty(Model.ErrorMessage)) {
+<p style="color:Red">@Model.ErrorMessage</p>
+}
+
+<p>For this demo, a valid user is anyone with the same username and password.<br />
+Username: tom<br />
+Password: tom</p>
+
+@{ Html.EnableClientValidation(); }
+@{ Html.BeginForm("index", "login", FormMethod.Post, new { onsubmit = "login.doLogin()" }); }
+
+@Html.LabelFor(m => m.Username): @Html.TextBoxFor(m => m.Username)<br />
+@Html.LabelFor(m => m.Password): @Html.PasswordFor(m => m.Password)<br />
+@Html.LabelFor(m => m.RememberMe): @Html.CheckBoxFor(m => m.RememberMe)<br />
+
+@Html.HiddenFor(m => m.RequestToken)
+@Html.HiddenFor(m => m.ReturnUrl)
+
+<input type="submit" value="Login"/>
+@{ Html.EndForm(); }
+
+<script type="text/javascript">
+    var login = {
+        doLogin: function () {
+            var pass = $('#Password').val();
+            var token = $('#RequestToken').val();
+            var hash = $.sha1(token + pass);
+             $('#Password').val(hash);
+        }
+    };
+</script>

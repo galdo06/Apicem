@@ -1,0 +1,10 @@
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\bin\CategorizationCertification.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\bin\CategorizationCertification.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\bin\CL.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\bin\EPPlus.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\bin\CL.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\bin\EPPlus.xml
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\obj\Debug\CategorizationCertification.csprojResolveAssemblyReference.cache
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\obj\Debug\CategorizationCertification.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\CategorizationCertification\obj\Debug\CategorizationCertification.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\CategorizationCertification\obj\Debug\CategorizationCertification.csprojResolveAssemblyReference.cache

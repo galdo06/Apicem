@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeDB_Model_NSStoreContainer" CdmEntityContainer="DatabaseContext">
+    <EntitySetMapping Name="Organisms">
+      <EntityTypeMapping TypeName="Model_Namespace.Organism">
+        <MappingFragment StoreEntitySet="Organisms">
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ScientificName" ColumnName="ScientificName" />
+          <ScalarProperty Name="CommonName" ColumnName="CommonName" />
+          <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+          <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganismTypes">
+      <EntityTypeMapping TypeName="Model_Namespace.OrganismType">
+        <MappingFragment StoreEntitySet="OrganismTypes">
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OrganismTypeName" ColumnName="OrganismTypeName" />
+          <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Organisms">
+      <EntityTypeMapping TypeName="Model_Namespace.Project_Organisms">
+        <MappingFragment StoreEntitySet="Project_Organisms">
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ProjectOrganismID" ColumnName="ProjectOrganismID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="Model_Namespace.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,7 @@
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\bin\Release\OAuth2.Mvc.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\bin\Release\OAuth2.Mvc.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\bin\Release\Newtonsoft.Json.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\bin\Release\Newtonsoft.Json.xml
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\obj\Release\OAuth2.Mvc.csprojResolveAssemblyReference.cache
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\obj\Release\OAuth2.Mvc.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\OAuth2.Mvc\obj\Release\OAuth2.Mvc.pdb

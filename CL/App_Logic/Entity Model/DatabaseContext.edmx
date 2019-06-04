@@ -1,0 +1,2378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmployeeDB_Model_NS.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActionProposed">
+          <Key>
+            <PropertyRef Name="ActionProposedID" />
+          </Key>
+          <Property Name="ActionProposedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionProposedDesc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ColorID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Application_Groups">
+          <Key>
+            <PropertyRef Name="ApplicationGroupID" />
+          </Key>
+          <Property Name="ApplicationGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Lat" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+          <Property Name="Lon" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+          <Property Name="Y" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+          <Property Name="X" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ColorDesc" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommonNames">
+          <Key>
+            <PropertyRef Name="CommonNameID" />
+          </Key>
+          <Property Name="CommonNameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CommonNameDesc" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="ConditionID" />
+          </Key>
+          <Property Name="ConditionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConditionDesc" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Daps">
+          <Key>
+            <PropertyRef Name="DapID" />
+          </Key>
+          <Property Name="DapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TreeDetailsID" Type="int" Nullable="false" />
+          <Property Name="DapValue" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Group_Projects">
+          <Key>
+            <PropertyRef Name="GroupProjectID" />
+          </Key>
+          <Property Name="GroupProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Group_Users">
+          <Key>
+            <PropertyRef Name="GroupUserID" />
+          </Key>
+          <Property Name="GroupUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification_User">
+          <Key>
+            <PropertyRef Name="NotificationUserID" />
+          </Key>
+          <Property Name="NotificationUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NotificationID" Type="int" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="UserID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="NotificationID" />
+          </Key>
+          <Property Name="NotificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NotificationDesc" Type="varchar(max)" Nullable="false" />
+          <Property Name="NotificationSubject" Type="varchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Organisms">
+          <Key>
+            <PropertyRef Name="OrganismID" />
+          </Key>
+          <Property Name="OrganismID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScientificNameID" Type="int" Nullable="false" />
+          <Property Name="CommonNameID" Type="int" Nullable="false" />
+          <Property Name="OrganismTypeID" Type="int" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrganismTypes">
+          <Key>
+            <PropertyRef Name="OrganismTypeID" />
+          </Key>
+          <Property Name="OrganismTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrganismTypeName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" />
+          <Property Name="EditedDate" Type="datetime" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="PerimeterPoints">
+          <Key>
+            <PropertyRef Name="PerimeterPointID" />
+          </Key>
+          <Property Name="PerimeterPointID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PerimeterID" Type="int" Nullable="false" />
+          <Property Name="Y" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+          <Property Name="X" Type="decimal" Precision="30" Scale="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perimeters">
+          <Key>
+            <PropertyRef Name="PerimeterID" />
+          </Key>
+          <Property Name="PerimeterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="PerimeterName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ColorID" Type="int" Nullable="false" />
+          <Property Name="IsMainPerimeter" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Project_Organisms">
+          <Key>
+            <PropertyRef Name="ProjectOrganismID" />
+          </Key>
+          <Property Name="ProjectOrganismID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrganismID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectInfo">
+          <Key>
+            <PropertyRef Name="ProjectInfoID" />
+          </Key>
+          <Property Name="ProjectInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="State" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="9" />
+          <Property Name="Client" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="EditedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProjectInfoTreeLocation">
+          <Key>
+            <PropertyRef Name="ProjectInfoTreeLocationID" />
+          </Key>
+          <Property Name="ProjectInfoTreeLocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="Y" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="X" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Lat" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Lon" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Parkings" Type="int" />
+          <Property Name="Acres" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DistanceBetweenTrees" Type="int" />
+          <Property Name="Lots0" Type="int" />
+          <Property Name="Lots1" Type="int" />
+          <Property Name="Lots2" Type="int" />
+          <Property Name="Lots3" Type="int" />
+          <Property Name="SocialInterest" Type="bit" />
+          <Property Name="Mitigation" Type="int" />
+          <Property Name="PreviouslyImpacted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reps">
+          <Key>
+            <PropertyRef Name="RepID" />
+          </Key>
+          <Property Name="RepID" Type="int" Nullable="false" />
+          <Property Name="RepName" Type="nvarchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role_Users">
+          <Key>
+            <PropertyRef Name="RoleUserID" />
+          </Key>
+          <Property Name="RoleUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScientificNames">
+          <Key>
+            <PropertyRef Name="ScientificNameID" />
+          </Key>
+          <Property Name="ScientificNameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScientificNameDesc" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TermsAndConditions">
+          <Key>
+            <PropertyRef Name="TermsAndConditionsID" />
+          </Key>
+          <Property Name="TermsAndConditionsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TermsAndConditionsInnerText" Type="xml" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tokens">
+          <Key>
+            <PropertyRef Name="TokenID" />
+          </Key>
+          <Property Name="TokenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceID" Type="int" Nullable="false" />
+          <Property Name="TokenKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" />
+          <Property Name="RequestTokenKey" Type="uniqueidentifier" />
+          <Property Name="TokenTypeID" Type="int" Nullable="false" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TokenType">
+          <Key>
+            <PropertyRef Name="TokenTypeID" />
+          </Key>
+          <Property Name="TokenTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TokenTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TreeDetails">
+          <Key>
+            <PropertyRef Name="TreeDetailsID" />
+          </Key>
+          <Property Name="TreeDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectOrganismID" Type="int" Nullable="false" />
+          <Property Name="Number" Type="int" />
+          <Property Name="Y" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="X" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Lat" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Lon" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Height" Type="decimal" Precision="30" Scale="20" />
+          <Property Name="Dap" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Dap_Counter" Type="int" Nullable="false" />
+          <Property Name="Varas" Type="int" />
+          <Property Name="ConditionID" Type="int" />
+          <Property Name="ActionProposedID" Type="int" />
+          <Property Name="Littoral" Type="bit" Nullable="false" />
+          <Property Name="MaritimeZone" Type="bit" Nullable="false" />
+          <Property Name="Commentary" Type="nvarchar" MaxLength="3800" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="UserInfoID" />
+          </Key>
+          <Property Name="UserInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SecondLastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="License" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" />
+          <Property Name="State" Type="nvarchar" MaxLength="100" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="9" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+          <Property Name="PhoneExtension" Type="nvarchar" MaxLength="4" />
+          <Property Name="CellPhone" Type="nvarchar" MaxLength="11" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="11" />
+          <Property Name="EditedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="LastActivityDate" Type="datetime" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="IsOnLine" Type="bit" />
+          <Property Name="IsLockedOut" Type="bit" />
+          <Property Name="IsChangePassword" Type="bit" />
+          <Property Name="LastLockedOutDate" Type="datetime" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatorUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditedDate" Type="datetime" Nullable="false" />
+          <Property Name="EditorUserID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ActionProposed_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="ActionProposed" Type="Self.ActionProposed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="ActionProposed">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationGroups_Applications">
+          <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+          <End Role="Application_Groups" Type="Self.Application_Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="Application_Groups">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationGroups_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+          <End Role="Application_Groups" Type="Self.Application_Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Application_Groups">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupProjects_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+          <End Role="Group_Projects" Type="Self.Group_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Group_Projects">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupProjects_Projects">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Group_Projects" Type="Self.Group_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Group_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupsUsers_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+          <End Role="Group_Users" Type="Self.Group_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Group_Users">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupsUsers_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Group_Users" Type="Self.Group_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Group_Users">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationUser_Group">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="Notification_User" Type="Self.Notification_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Notification_User">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationUser_Notification">
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="0..1" />
+          <End Role="Notification_User" Type="Self.Notification_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notifications">
+              <PropertyRef Name="NotificationID" />
+            </Principal>
+            <Dependent Role="Notification_User">
+              <PropertyRef Name="NotificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationUser_User">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Notification_User" Type="Self.Notification_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Notification_User">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_CommonNames">
+          <End Role="CommonNames" Type="Self.CommonNames" Multiplicity="1" />
+          <End Role="Organisms" Type="Self.Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommonNames">
+              <PropertyRef Name="CommonNameID" />
+            </Principal>
+            <Dependent Role="Organisms">
+              <PropertyRef Name="CommonNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_Groups">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+          <End Role="Organisms" Type="Self.Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Organisms">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_OrganismTypes">
+          <End Role="OrganismTypes" Type="Self.OrganismTypes" Multiplicity="1" />
+          <End Role="Organisms" Type="Self.Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganismTypes">
+              <PropertyRef Name="OrganismTypeID" />
+            </Principal>
+            <Dependent Role="Organisms">
+              <PropertyRef Name="OrganismTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_ProjectOrganisms">
+          <End Role="Organisms" Type="Self.Organisms" Multiplicity="1" />
+          <End Role="Project_Organisms" Type="Self.Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisms">
+              <PropertyRef Name="OrganismID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="OrganismID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_ScientificNames">
+          <End Role="ScientificNames" Type="Self.ScientificNames" Multiplicity="1" />
+          <End Role="Organisms" Type="Self.Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScientificNames">
+              <PropertyRef Name="ScientificNameID" />
+            </Principal>
+            <Dependent Role="Organisms">
+              <PropertyRef Name="ScientificNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerimeterPoints_Perimeters1">
+          <End Role="Perimeters" Type="Self.Perimeters" Multiplicity="1" />
+          <End Role="PerimeterPoints" Type="Self.PerimeterPoints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perimeters">
+              <PropertyRef Name="PerimeterID" />
+            </Principal>
+            <Dependent Role="PerimeterPoints">
+              <PropertyRef Name="PerimeterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perimeters_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="Perimeters" Type="Self.Perimeters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="Perimeters">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Organisms_TreeDetails">
+          <End Role="Project_Organisms" Type="Self.Project_Organisms" Multiplicity="1" />
+          <End Role="TreeDetails" Type="Self.TreeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_Organisms">
+              <PropertyRef Name="ProjectOrganismID" />
+            </Principal>
+            <Dependent Role="TreeDetails">
+              <PropertyRef Name="ProjectOrganismID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectInfo_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="ProjectInfo" Type="Self.ProjectInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="ProjectInfo">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_Perimeters">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="Perimeters" Type="Self.Perimeters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Perimeters">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectInfo">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectInfo" Type="Self.ProjectInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectInfo">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectInfoTreeLocation">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="ProjectInfoTreeLocation" Type="Self.ProjectInfoTreeLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectInfoTreeLocation">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectOrganisms">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="Project_Organisms" Type="Self.Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleUsers_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Role_Users" Type="Self.Role_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Role_Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleUsers_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Role_Users" Type="Self.Role_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Role_Users">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tokens_Device">
+          <End Role="Device" Type="Self.Device" Multiplicity="1" />
+          <End Role="Tokens" Type="Self.Tokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="Tokens">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tokens_TokenType">
+          <End Role="TokenType" Type="Self.TokenType" Multiplicity="1" />
+          <End Role="Tokens" Type="Self.Tokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TokenType">
+              <PropertyRef Name="TokenTypeID" />
+            </Principal>
+            <Dependent Role="Tokens">
+              <PropertyRef Name="TokenTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TreeDetails_ActionProposed">
+          <End Role="ActionProposed" Type="Self.ActionProposed" Multiplicity="0..1" />
+          <End Role="TreeDetails" Type="Self.TreeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionProposed">
+              <PropertyRef Name="ActionProposedID" />
+            </Principal>
+            <Dependent Role="TreeDetails">
+              <PropertyRef Name="ActionProposedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TreeDetails_Condition">
+          <End Role="Condition" Type="Self.Condition" Multiplicity="0..1" />
+          <End Role="TreeDetails" Type="Self.TreeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Condition">
+              <PropertyRef Name="ConditionID" />
+            </Principal>
+            <Dependent Role="TreeDetails">
+              <PropertyRef Name="ConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TreeDetails_Daps">
+          <End Role="TreeDetails" Type="Self.TreeDetails" Multiplicity="1" />
+          <End Role="Daps" Type="Self.Daps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TreeDetails">
+              <PropertyRef Name="TreeDetailsID" />
+            </Principal>
+            <Dependent Role="Daps">
+              <PropertyRef Name="TreeDetailsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserInfo">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserInfo" Type="Self.UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmployeeDB_Model_NSStoreContainer">
+          <EntitySet Name="ActionProposed" EntityType="Self.ActionProposed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Application_Groups" EntityType="Self.Application_Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonNames" EntityType="Self.CommonNames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Daps" EntityType="Self.Daps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Group_Projects" EntityType="Self.Group_Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Group_Users" EntityType="Self.Group_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification_User" EntityType="Self.Notification_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organisms" EntityType="Self.Organisms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrganismTypes" EntityType="Self.OrganismTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PerimeterPoints" EntityType="Self.PerimeterPoints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perimeters" EntityType="Self.Perimeters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_Organisms" EntityType="Self.Project_Organisms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectInfo" EntityType="Self.ProjectInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectInfoTreeLocation" EntityType="Self.ProjectInfoTreeLocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reps" EntityType="Self.Reps" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role_Users" EntityType="Self.Role_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScientificNames" EntityType="Self.ScientificNames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TermsAndConditions" EntityType="Self.TermsAndConditions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tokens" EntityType="Self.Tokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TokenType" EntityType="Self.TokenType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TreeDetails" EntityType="Self.TreeDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ActionProposed_Color" Association="Self.FK_ActionProposed_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="ActionProposed" EntitySet="ActionProposed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationGroups_Applications" Association="Self.FK_ApplicationGroups_Applications">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Application_Groups" EntitySet="Application_Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationGroups_Groups" Association="Self.FK_ApplicationGroups_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Application_Groups" EntitySet="Application_Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupProjects_Groups" Association="Self.FK_GroupProjects_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Group_Projects" EntitySet="Group_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupProjects_Projects" Association="Self.FK_GroupProjects_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Group_Projects" EntitySet="Group_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupsUsers_Groups" Association="Self.FK_GroupsUsers_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Group_Users" EntitySet="Group_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupsUsers_Users" Association="Self.FK_GroupsUsers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Group_Users" EntitySet="Group_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationUser_Group" Association="Self.FK_NotificationUser_Group">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Notification_User" EntitySet="Notification_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationUser_Notification" Association="Self.FK_NotificationUser_Notification">
+            <End Role="Notifications" EntitySet="Notifications" />
+            <End Role="Notification_User" EntitySet="Notification_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationUser_User" Association="Self.FK_NotificationUser_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notification_User" EntitySet="Notification_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_CommonNames" Association="Self.FK_Organisms_CommonNames">
+            <End Role="CommonNames" EntitySet="CommonNames" />
+            <End Role="Organisms" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_Groups" Association="Self.FK_Organisms_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Organisms" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_OrganismTypes" Association="Self.FK_Organisms_OrganismTypes">
+            <End Role="OrganismTypes" EntitySet="OrganismTypes" />
+            <End Role="Organisms" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_ProjectOrganisms" Association="Self.FK_Organisms_ProjectOrganisms">
+            <End Role="Organisms" EntitySet="Organisms" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_ScientificNames" Association="Self.FK_Organisms_ScientificNames">
+            <End Role="ScientificNames" EntitySet="ScientificNames" />
+            <End Role="Organisms" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerimeterPoints_Perimeters1" Association="Self.FK_PerimeterPoints_Perimeters1">
+            <End Role="Perimeters" EntitySet="Perimeters" />
+            <End Role="PerimeterPoints" EntitySet="PerimeterPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perimeters_Color" Association="Self.FK_Perimeters_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Perimeters" EntitySet="Perimeters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Organisms_TreeDetails" Association="Self.FK_Project_Organisms_TreeDetails">
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+            <End Role="TreeDetails" EntitySet="TreeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectInfo_City" Association="Self.FK_ProjectInfo_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Perimeters" Association="Self.FK_Projects_Perimeters">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Perimeters" EntitySet="Perimeters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectInfo" Association="Self.FK_Projects_ProjectInfo">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectInfo" EntitySet="ProjectInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectInfoTreeLocation" Association="Self.FK_Projects_ProjectInfoTreeLocation">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectInfoTreeLocation" EntitySet="ProjectInfoTreeLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectOrganisms" Association="Self.FK_Projects_ProjectOrganisms">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleUsers_Roles" Association="Self.FK_RoleUsers_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Role_Users" EntitySet="Role_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleUsers_Users" Association="Self.FK_RoleUsers_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Role_Users" EntitySet="Role_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tokens_Device" Association="Self.FK_Tokens_Device">
+            <End Role="Device" EntitySet="Device" />
+            <End Role="Tokens" EntitySet="Tokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tokens_TokenType" Association="Self.FK_Tokens_TokenType">
+            <End Role="TokenType" EntitySet="TokenType" />
+            <End Role="Tokens" EntitySet="Tokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TreeDetails_ActionProposed" Association="Self.FK_TreeDetails_ActionProposed">
+            <End Role="ActionProposed" EntitySet="ActionProposed" />
+            <End Role="TreeDetails" EntitySet="TreeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TreeDetails_Condition" Association="Self.FK_TreeDetails_Condition">
+            <End Role="Condition" EntitySet="Condition" />
+            <End Role="TreeDetails" EntitySet="TreeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TreeDetails_Daps" Association="Self.FK_TreeDetails_Daps">
+            <End Role="TreeDetails" EntitySet="TreeDetails" />
+            <End Role="Daps" EntitySet="Daps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserInfo" Association="Self.FK_Users_UserInfo">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model_Namespace" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DatabaseContext" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="ActionProposeds" EntityType="Model_Namespace.ActionProposed" />
+          <EntitySet Name="Application_Groups" EntityType="Model_Namespace.Application_Groups" />
+          <EntitySet Name="Applications" EntityType="Model_Namespace.Application" />
+          <EntitySet Name="Cities" EntityType="Model_Namespace.City" />
+          <EntitySet Name="Colors" EntityType="Model_Namespace.Color" />
+          <EntitySet Name="CommonNames" EntityType="Model_Namespace.CommonName" />
+          <EntitySet Name="Conditions" EntityType="Model_Namespace.Condition" />
+          <EntitySet Name="Daps" EntityType="Model_Namespace.Dap" />
+          <EntitySet Name="Devices" EntityType="Model_Namespace.Device" />
+          <EntitySet Name="Group_Projects" EntityType="Model_Namespace.Group_Projects" />
+          <EntitySet Name="Group_Users" EntityType="Model_Namespace.Group_Users" />
+          <EntitySet Name="Groups" EntityType="Model_Namespace.Group" />
+          <EntitySet Name="Notification_User" EntityType="Model_Namespace.Notification_User" />
+          <EntitySet Name="Notifications" EntityType="Model_Namespace.Notification" />
+          <EntitySet Name="Organisms" EntityType="Model_Namespace.Organism" />
+          <EntitySet Name="OrganismTypes" EntityType="Model_Namespace.OrganismType" />
+          <EntitySet Name="PerimeterPoints" EntityType="Model_Namespace.PerimeterPoint" />
+          <EntitySet Name="Perimeters" EntityType="Model_Namespace.Perimeter" />
+          <EntitySet Name="Project_Organisms" EntityType="Model_Namespace.Project_Organisms" />
+          <EntitySet Name="ProjectInfoes" EntityType="Model_Namespace.ProjectInfo" />
+          <EntitySet Name="ProjectInfoTreeLocations" EntityType="Model_Namespace.ProjectInfoTreeLocation" />
+          <EntitySet Name="Projects" EntityType="Model_Namespace.Project" />
+          <EntitySet Name="Reps" EntityType="Model_Namespace.Rep" />
+          <EntitySet Name="Role_Users" EntityType="Model_Namespace.Role_Users" />
+          <EntitySet Name="Roles" EntityType="Model_Namespace.Role" />
+          <EntitySet Name="ScientificNames" EntityType="Model_Namespace.ScientificName" />
+          <EntitySet Name="TermsAndConditions" EntityType="Model_Namespace.TermsAndCondition" />
+          <EntitySet Name="Tokens" EntityType="Model_Namespace.Token" />
+          <EntitySet Name="TokenTypes" EntityType="Model_Namespace.TokenType" />
+          <EntitySet Name="TreeDetails" EntityType="Model_Namespace.TreeDetail" />
+          <EntitySet Name="UserInfoes" EntityType="Model_Namespace.UserInfo" />
+          <EntitySet Name="Users" EntityType="Model_Namespace.User" />
+          <AssociationSet Name="FK_ActionProposed_Color" Association="Model_Namespace.FK_ActionProposed_Color">
+            <End Role="Color" EntitySet="Colors" />
+            <End Role="ActionProposed" EntitySet="ActionProposeds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TreeDetails_ActionProposed" Association="Model_Namespace.FK_TreeDetails_ActionProposed">
+            <End Role="ActionProposed" EntitySet="ActionProposeds" />
+            <End Role="TreeDetail" EntitySet="TreeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationGroups_Applications" Association="Model_Namespace.FK_ApplicationGroups_Applications">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="Application_Groups" EntitySet="Application_Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ApplicationGroups_Groups" Association="Model_Namespace.FK_ApplicationGroups_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Application_Groups" EntitySet="Application_Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectInfo_City" Association="Model_Namespace.FK_ProjectInfo_City">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perimeters_Color" Association="Model_Namespace.FK_Perimeters_Color">
+            <End Role="Color" EntitySet="Colors" />
+            <End Role="Perimeter" EntitySet="Perimeters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_CommonNames" Association="Model_Namespace.FK_Organisms_CommonNames">
+            <End Role="CommonName" EntitySet="CommonNames" />
+            <End Role="Organism" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TreeDetails_Condition" Association="Model_Namespace.FK_TreeDetails_Condition">
+            <End Role="Condition" EntitySet="Conditions" />
+            <End Role="TreeDetail" EntitySet="TreeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TreeDetails_Daps" Association="Model_Namespace.FK_TreeDetails_Daps">
+            <End Role="TreeDetail" EntitySet="TreeDetails" />
+            <End Role="Dap" EntitySet="Daps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tokens_Device" Association="Model_Namespace.FK_Tokens_Device">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="Token" EntitySet="Tokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupProjects_Groups" Association="Model_Namespace.FK_GroupProjects_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Group_Projects" EntitySet="Group_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupProjects_Projects" Association="Model_Namespace.FK_GroupProjects_Projects">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Group_Projects" EntitySet="Group_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupsUsers_Groups" Association="Model_Namespace.FK_GroupsUsers_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Group_Users" EntitySet="Group_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupsUsers_Users" Association="Model_Namespace.FK_GroupsUsers_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Group_Users" EntitySet="Group_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationUser_Group" Association="Model_Namespace.FK_NotificationUser_Group">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Notification_User" EntitySet="Notification_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_Groups" Association="Model_Namespace.FK_Organisms_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Organism" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationUser_Notification" Association="Model_Namespace.FK_NotificationUser_Notification">
+            <End Role="Notification" EntitySet="Notifications" />
+            <End Role="Notification_User" EntitySet="Notification_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationUser_User" Association="Model_Namespace.FK_NotificationUser_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Notification_User" EntitySet="Notification_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_OrganismTypes" Association="Model_Namespace.FK_Organisms_OrganismTypes">
+            <End Role="OrganismType" EntitySet="OrganismTypes" />
+            <End Role="Organism" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_ProjectOrganisms" Association="Model_Namespace.FK_Organisms_ProjectOrganisms">
+            <End Role="Organism" EntitySet="Organisms" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisms_ScientificNames" Association="Model_Namespace.FK_Organisms_ScientificNames">
+            <End Role="ScientificName" EntitySet="ScientificNames" />
+            <End Role="Organism" EntitySet="Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerimeterPoints_Perimeters1" Association="Model_Namespace.FK_PerimeterPoints_Perimeters1">
+            <End Role="Perimeter" EntitySet="Perimeters" />
+            <End Role="PerimeterPoint" EntitySet="PerimeterPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Perimeters" Association="Model_Namespace.FK_Projects_Perimeters">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Perimeter" EntitySet="Perimeters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Organisms_TreeDetails" Association="Model_Namespace.FK_Project_Organisms_TreeDetails">
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+            <End Role="TreeDetail" EntitySet="TreeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectOrganisms" Association="Model_Namespace.FK_Projects_ProjectOrganisms">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Project_Organisms" EntitySet="Project_Organisms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectInfo" Association="Model_Namespace.FK_Projects_ProjectInfo">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ProjectInfo" EntitySet="ProjectInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectInfoTreeLocation" Association="Model_Namespace.FK_Projects_ProjectInfoTreeLocation">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ProjectInfoTreeLocation" EntitySet="ProjectInfoTreeLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleUsers_Roles" Association="Model_Namespace.FK_RoleUsers_Roles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Role_Users" EntitySet="Role_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoleUsers_Users" Association="Model_Namespace.FK_RoleUsers_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Role_Users" EntitySet="Role_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tokens_TokenType" Association="Model_Namespace.FK_Tokens_TokenType">
+            <End Role="TokenType" EntitySet="TokenTypes" />
+            <End Role="Token" EntitySet="Tokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UserInfo" Association="Model_Namespace.FK_Users_UserInfo">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserInfo" EntitySet="UserInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActionProposed">
+          <Key>
+            <PropertyRef Name="ActionProposedID" />
+          </Key>
+          <Property Name="ActionProposedID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ActionProposedDesc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Color" Relationship="Model_Namespace.FK_ActionProposed_Color" FromRole="ActionProposed" ToRole="Color" />
+          <NavigationProperty Name="TreeDetails" Relationship="Model_Namespace.FK_TreeDetails_ActionProposed" FromRole="ActionProposed" ToRole="TreeDetail" />
+        </EntityType>
+        <EntityType Name="Application_Groups">
+          <Key>
+            <PropertyRef Name="ApplicationGroupID" />
+          </Key>
+          <Property Name="ApplicationGroupID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="Model_Namespace.FK_ApplicationGroups_Applications" FromRole="Application_Groups" ToRole="Application" />
+          <NavigationProperty Name="Group" Relationship="Model_Namespace.FK_ApplicationGroups_Groups" FromRole="Application_Groups" ToRole="Group" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Application_Groups" Relationship="Model_Namespace.FK_ApplicationGroups_Applications" FromRole="Application" ToRole="Application_Groups" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Lat" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <Property Name="Lon" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <Property Name="Y" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <Property Name="X" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <NavigationProperty Name="ProjectInfoes" Relationship="Model_Namespace.FK_ProjectInfo_City" FromRole="City" ToRole="ProjectInfo" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="ColorID" />
+          </Key>
+          <Property Name="ColorID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ColorDesc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ActionProposeds" Relationship="Model_Namespace.FK_ActionProposed_Color" FromRole="Color" ToRole="ActionProposed" />
+          <NavigationProperty Name="Perimeters" Relationship="Model_Namespace.FK_Perimeters_Color" FromRole="Color" ToRole="Perimeter" />
+        </EntityType>
+        <EntityType Name="CommonName">
+          <Key>
+            <PropertyRef Name="CommonNameID" />
+          </Key>
+          <Property Name="CommonNameID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CommonNameDesc" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Organisms" Relationship="Model_Namespace.FK_Organisms_CommonNames" FromRole="CommonName" ToRole="Organism" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="ConditionID" />
+          </Key>
+          <Property Name="ConditionID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ConditionDesc" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TreeDetails" Relationship="Model_Namespace.FK_TreeDetails_Condition" FromRole="Condition" ToRole="TreeDetail" />
+        </EntityType>
+        <EntityType Name="Dap">
+          <Key>
+            <PropertyRef Name="DapID" />
+          </Key>
+          <Property Name="DapID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="TreeDetailsID" Type="Int32" Nullable="false" />
+          <Property Name="DapValue" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <NavigationProperty Name="TreeDetail" Relationship="Model_Namespace.FK_TreeDetails_Daps" FromRole="Dap" ToRole="TreeDetail" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DeviceKey" Type="Guid" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Tokens" Relationship="Model_Namespace.FK_Tokens_Device" FromRole="Device" ToRole="Token" />
+        </EntityType>
+        <EntityType Name="Group_Projects">
+          <Key>
+            <PropertyRef Name="GroupProjectID" />
+          </Key>
+          <Property Name="GroupProjectID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="Model_Namespace.FK_GroupProjects_Groups" FromRole="Group_Projects" ToRole="Group" />
+          <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_GroupProjects_Projects" FromRole="Group_Projects" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Group_Users">
+          <Key>
+            <PropertyRef Name="GroupUserID" />
+          </Key>
+          <Property Name="GroupUserID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Group" Relationship="Model_Namespace.FK_GroupsUsers_Groups" FromRole="Group_Users" ToRole="Group" />
+          <NavigationProperty Name="User" Relationship="Model_Namespace.FK_GroupsUsers_Users" FromRole="Group_Users" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Application_Groups" Relationship="Model_Namespace.FK_ApplicationGroups_Groups" FromRole="Group" ToRole="Application_Groups" />
+          <NavigationProperty Name="Group_Projects" Relationship="Model_Namespace.FK_GroupProjects_Groups" FromRole="Group" ToRole="Group_Projects" />
+          <NavigationProperty Name="Group_Users" Relationship="Model_Namespace.FK_GroupsUsers_Groups" FromRole="Group" ToRole="Group_Users" />
+          <NavigationProperty Name="Notification_User" Relationship="Model_Namespace.FK_NotificationUser_Group" FromRole="Group" ToRole="Notification_User" />
+          <NavigationProperty Name="Organisms" Relationship="Model_Namespace.FK_Organisms_Groups" FromRole="Group" ToRole="Organism" />
+        </EntityType>
+        <EntityType Name="Notification_User">
+          <Key>
+            <PropertyRef Name="NotificationUserID" />
+          </Key>
+          <Property Name="NotificationUserID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="NotificationID" Type="Int32" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="UserID" Type="Guid" />
+          <NavigationProperty Name="Group" Relationship="Model_Namespace.FK_NotificationUser_Group" FromRole="Notification_User" ToRole="Group" />
+          <NavigationProperty Name="Notification" Relationship="Model_Namespace.FK_NotificationUser_Notification" FromRole="Notification_User" ToRole="Notification" />
+          <NavigationProperty Name="User" Relationship="Model_Namespace.FK_NotificationUser_User" FromRole="Notification_User" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="NotificationID" />
+          </Key>
+          <Property Name="NotificationID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="NotificationDesc" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotificationSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" />
+          <NavigationProperty Name="Notification_User" Relationship="Model_Namespace.FK_NotificationUser_Notification" FromRole="Notification" ToRole="Notification_User" />
+        </EntityType>
+        <EntityType Name="Organism">
+          <Key>
+            <PropertyRef Name="OrganismID" />
+          </Key>
+          <Property Name="OrganismID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ScientificNameID" Type="Int32" Nullable="false" />
+          <Property Name="CommonNameID" Type="Int32" Nullable="false" />
+          <Property Name="OrganismTypeID" Type="Int32" Nullable="false" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="CommonName" Relationship="Model_Namespace.FK_Organisms_CommonNames" FromRole="Organism" ToRole="CommonName" />
+          <NavigationProperty Name="Group" Relationship="Model_Namespace.FK_Organisms_Groups" FromRole="Organism" ToRole="Group" />
+          <NavigationProperty Name="OrganismType" Relationship="Model_Namespace.FK_Organisms_OrganismTypes" FromRole="Organism" ToRole="OrganismType" />
+          <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_Organisms_ProjectOrganisms" FromRole="Organism" ToRole="Project_Organisms" />
+          <NavigationProperty Name="ScientificName" Relationship="Model_Namespace.FK_Organisms_ScientificNames" FromRole="Organism" ToRole="ScientificName" />
+        </EntityType>
+        <EntityType Name="OrganismType">
+          <Key>
+            <PropertyRef Name="OrganismTypeID" />
+          </Key>
+          <Property Name="OrganismTypeID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="OrganismTypeName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" />
+          <Property Name="EditedDate" Type="DateTime" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" />
+          <NavigationProperty Name="Organisms" Relationship="Model_Namespace.FK_Organisms_OrganismTypes" FromRole="OrganismType" ToRole="Organism" />
+        </EntityType>
+        <EntityType Name="PerimeterPoint">
+          <Key>
+            <PropertyRef Name="PerimeterPointID" />
+          </Key>
+          <Property Name="PerimeterPointID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="PerimeterID" Type="Int32" Nullable="false" />
+          <Property Name="Y" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <Property Name="X" Type="Decimal" Nullable="false" Precision="30" Scale="20" />
+          <NavigationProperty Name="Perimeter" Relationship="Model_Namespace.FK_PerimeterPoints_Perimeters1" FromRole="PerimeterPoint" ToRole="Perimeter" />
+        </EntityType>
+        <EntityType Name="Perimeter">
+          <Key>
+            <PropertyRef Name="PerimeterID" />
+          </Key>
+          <Property Name="PerimeterID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="PerimeterName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" />
+          <Property Name="IsMainPerimeter" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Color" Relationship="Model_Namespace.FK_Perimeters_Color" FromRole="Perimeter" ToRole="Color" />
+          <NavigationProperty Name="PerimeterPoints" Relationship="Model_Namespace.FK_PerimeterPoints_Perimeters1" FromRole="Perimeter" ToRole="PerimeterPoint" />
+          <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_Projects_Perimeters" FromRole="Perimeter" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Project_Organisms">
+          <Key>
+            <PropertyRef Name="ProjectOrganismID" />
+          </Key>
+          <Property Name="ProjectOrganismID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="OrganismID" Type="Int32" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Organism" Relationship="Model_Namespace.FK_Organisms_ProjectOrganisms" FromRole="Project_Organisms" ToRole="Organism" />
+          <NavigationProperty Name="TreeDetails" Relationship="Model_Namespace.FK_Project_Organisms_TreeDetails" FromRole="Project_Organisms" ToRole="TreeDetail" />
+          <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_Projects_ProjectOrganisms" FromRole="Project_Organisms" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="ProjectInfo">
+          <Key>
+            <PropertyRef Name="ProjectInfoID" />
+          </Key>
+          <Property Name="ProjectInfoID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Client" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EditedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="City" Relationship="Model_Namespace.FK_ProjectInfo_City" FromRole="ProjectInfo" ToRole="City" />
+          <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_Projects_ProjectInfo" FromRole="ProjectInfo" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="ProjectInfoTreeLocation">
+          <Key>
+            <PropertyRef Name="ProjectInfoTreeLocationID" />
+          </Key>
+          <Property Name="ProjectInfoTreeLocationID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="Y" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="X" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Lat" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Lon" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Parkings" Type="Int32" />
+          <Property Name="Acres" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DistanceBetweenTrees" Type="Int32" />
+          <Property Name="Lots0" Type="Int32" />
+          <Property Name="Lots1" Type="Int32" />
+          <Property Name="Lots2" Type="Int32" />
+          <Property Name="Lots3" Type="Int32" />
+          <Property Name="SocialInterest" Type="Boolean" />
+          <Property Name="Mitigation" Type="Int32" />
+          <Property Name="PreviouslyImpacted" Type="Boolean" />
+          <NavigationProperty Name="Project" Relationship="Model_Namespace.FK_Projects_ProjectInfoTreeLocation" FromRole="ProjectInfoTreeLocation" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Group_Projects" Relationship="Model_Namespace.FK_GroupProjects_Projects" FromRole="Project" ToRole="Group_Projects" />
+          <NavigationProperty Name="Perimeters" Relationship="Model_Namespace.FK_Projects_Perimeters" FromRole="Project" ToRole="Perimeter" />
+          <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_Projects_ProjectOrganisms" FromRole="Project" ToRole="Project_Organisms" />
+          <NavigationProperty Name="ProjectInfoes" Relationship="Model_Namespace.FK_Projects_ProjectInfo" FromRole="Project" ToRole="ProjectInfo" />
+          <NavigationProperty Name="ProjectInfoTreeLocations" Relationship="Model_Namespace.FK_Projects_ProjectInfoTreeLocation" FromRole="Project" ToRole="ProjectInfoTreeLocation" />
+        </EntityType>
+        <EntityType Name="Rep">
+          <Key>
+            <PropertyRef Name="RepID" />
+          </Key>
+          <Property Name="RepID" Type="Int32" Nullable="false" />
+          <Property Name="RepName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Role_Users">
+          <Key>
+            <PropertyRef Name="RoleUserID" />
+          </Key>
+          <Property Name="RoleUserID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Model_Namespace.FK_RoleUsers_Roles" FromRole="Role_Users" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="Model_Namespace.FK_RoleUsers_Users" FromRole="Role_Users" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role_Users" Relationship="Model_Namespace.FK_RoleUsers_Roles" FromRole="Role" ToRole="Role_Users" />
+        </EntityType>
+        <EntityType Name="ScientificName">
+          <Key>
+            <PropertyRef Name="ScientificNameID" />
+          </Key>
+          <Property Name="ScientificNameID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ScientificNameDesc" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Organisms" Relationship="Model_Namespace.FK_Organisms_ScientificNames" FromRole="ScientificName" ToRole="Organism" />
+        </EntityType>
+        <EntityType Name="TermsAndCondition">
+          <Key>
+            <PropertyRef Name="TermsAndConditionsID" />
+          </Key>
+          <Property Name="TermsAndConditionsID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="TermsAndConditionsInnerText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Token">
+          <Key>
+            <PropertyRef Name="TokenID" />
+          </Key>
+          <Property Name="TokenID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DeviceID" Type="Int32" Nullable="false" />
+          <Property Name="TokenKey" Type="Guid" Nullable="false" />
+          <Property Name="UserID" Type="Guid" />
+          <Property Name="RequestTokenKey" Type="Guid" />
+          <Property Name="TokenTypeID" Type="Int32" Nullable="false" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Device" Relationship="Model_Namespace.FK_Tokens_Device" FromRole="Token" ToRole="Device" />
+          <NavigationProperty Name="TokenType" Relationship="Model_Namespace.FK_Tokens_TokenType" FromRole="Token" ToRole="TokenType" />
+        </EntityType>
+        <EntityType Name="TokenType">
+          <Key>
+            <PropertyRef Name="TokenTypeID" />
+          </Key>
+          <Property Name="TokenTypeID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="TokenTypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tokens" Relationship="Model_Namespace.FK_Tokens_TokenType" FromRole="TokenType" ToRole="Token" />
+        </EntityType>
+        <EntityType Name="TreeDetail">
+          <Key>
+            <PropertyRef Name="TreeDetailsID" />
+          </Key>
+          <Property Name="TreeDetailsID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProjectOrganismID" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="Y" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="X" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Lat" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Lon" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Height" Type="Decimal" Precision="30" Scale="20" />
+          <Property Name="Dap" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Dap_Counter" Type="Int32" Nullable="false" />
+          <Property Name="Varas" Type="Int32" />
+          <Property Name="ConditionID" Type="Int32" />
+          <Property Name="ActionProposedID" Type="Int32" />
+          <Property Name="Littoral" Type="Boolean" Nullable="false" />
+          <Property Name="MaritimeZone" Type="Boolean" Nullable="false" />
+          <Property Name="Commentary" Type="String" MaxLength="3800" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="ActionProposed" Relationship="Model_Namespace.FK_TreeDetails_ActionProposed" FromRole="TreeDetail" ToRole="ActionProposed" />
+          <NavigationProperty Name="Condition" Relationship="Model_Namespace.FK_TreeDetails_Condition" FromRole="TreeDetail" ToRole="Condition" />
+          <NavigationProperty Name="Daps" Relationship="Model_Namespace.FK_TreeDetails_Daps" FromRole="TreeDetail" ToRole="Dap" />
+          <NavigationProperty Name="Project_Organisms" Relationship="Model_Namespace.FK_Project_Organisms_TreeDetails" FromRole="TreeDetail" ToRole="Project_Organisms" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="UserInfoID" />
+          </Key>
+          <Property Name="UserInfoID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SecondLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="License" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneExtension" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CellPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="EditedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Model_Namespace.FK_Users_UserInfo" FromRole="UserInfo" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordQuestion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordAnswer" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastActivityDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="IsOnLine" Type="Boolean" />
+          <Property Name="IsLockedOut" Type="Boolean" />
+          <Property Name="IsChangePassword" Type="Boolean" />
+          <Property Name="LastLockedOutDate" Type="DateTime" Precision="3" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Precision="3" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorUserID" Type="Guid" Nullable="false" />
+          <Property Name="EditedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditorUserID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Group_Users" Relationship="Model_Namespace.FK_GroupsUsers_Users" FromRole="User" ToRole="Group_Users" />
+          <NavigationProperty Name="Notification_User" Relationship="Model_Namespace.FK_NotificationUser_User" FromRole="User" ToRole="Notification_User" />
+          <NavigationProperty Name="Role_Users" Relationship="Model_Namespace.FK_RoleUsers_Users" FromRole="User" ToRole="Role_Users" />
+          <NavigationProperty Name="UserInfoes" Relationship="Model_Namespace.FK_Users_UserInfo" FromRole="User" ToRole="UserInfo" />
+        </EntityType>
+        <Association Name="FK_ActionProposed_Color">
+          <End Type="Model_Namespace.Color" Role="Color" Multiplicity="1" />
+          <End Type="Model_Namespace.ActionProposed" Role="ActionProposed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="ActionProposed">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TreeDetails_ActionProposed">
+          <End Type="Model_Namespace.ActionProposed" Role="ActionProposed" Multiplicity="0..1" />
+          <End Type="Model_Namespace.TreeDetail" Role="TreeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActionProposed">
+              <PropertyRef Name="ActionProposedID" />
+            </Principal>
+            <Dependent Role="TreeDetail">
+              <PropertyRef Name="ActionProposedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationGroups_Applications">
+          <End Type="Model_Namespace.Application" Role="Application" Multiplicity="1" />
+          <End Type="Model_Namespace.Application_Groups" Role="Application_Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="Application_Groups">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ApplicationGroups_Groups">
+          <End Type="Model_Namespace.Group" Role="Group" Multiplicity="1" />
+          <End Type="Model_Namespace.Application_Groups" Role="Application_Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Application_Groups">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectInfo_City">
+          <End Type="Model_Namespace.City" Role="City" Multiplicity="0..1" />
+          <End Type="Model_Namespace.ProjectInfo" Role="ProjectInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="ProjectInfo">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perimeters_Color">
+          <End Type="Model_Namespace.Color" Role="Color" Multiplicity="1" />
+          <End Type="Model_Namespace.Perimeter" Role="Perimeter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="ColorID" />
+            </Principal>
+            <Dependent Role="Perimeter">
+              <PropertyRef Name="ColorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_CommonNames">
+          <End Type="Model_Namespace.CommonName" Role="CommonName" Multiplicity="1" />
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommonName">
+              <PropertyRef Name="CommonNameID" />
+            </Principal>
+            <Dependent Role="Organism">
+              <PropertyRef Name="CommonNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TreeDetails_Condition">
+          <End Type="Model_Namespace.Condition" Role="Condition" Multiplicity="0..1" />
+          <End Type="Model_Namespace.TreeDetail" Role="TreeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Condition">
+              <PropertyRef Name="ConditionID" />
+            </Principal>
+            <Dependent Role="TreeDetail">
+              <PropertyRef Name="ConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TreeDetails_Daps">
+          <End Type="Model_Namespace.TreeDetail" Role="TreeDetail" Multiplicity="1" />
+          <End Type="Model_Namespace.Dap" Role="Dap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TreeDetail">
+              <PropertyRef Name="TreeDetailsID" />
+            </Principal>
+            <Dependent Role="Dap">
+              <PropertyRef Name="TreeDetailsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tokens_Device">
+          <End Type="Model_Namespace.Device" Role="Device" Multiplicity="1" />
+          <End Type="Model_Namespace.Token" Role="Token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="Token">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupProjects_Groups">
+          <End Type="Model_Namespace.Group" Role="Group" Multiplicity="1" />
+          <End Type="Model_Namespace.Group_Projects" Role="Group_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Group_Projects">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupProjects_Projects">
+          <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model_Namespace.Group_Projects" Role="Group_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Group_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupsUsers_Groups">
+          <End Type="Model_Namespace.Group" Role="Group" Multiplicity="1" />
+          <End Type="Model_Namespace.Group_Users" Role="Group_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Group_Users">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupsUsers_Users">
+          <End Type="Model_Namespace.User" Role="User" Multiplicity="1" />
+          <End Type="Model_Namespace.Group_Users" Role="Group_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Group_Users">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationUser_Group">
+          <End Type="Model_Namespace.Group" Role="Group" Multiplicity="0..1" />
+          <End Type="Model_Namespace.Notification_User" Role="Notification_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Notification_User">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_Groups">
+          <End Type="Model_Namespace.Group" Role="Group" Multiplicity="1" />
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="GroupID" />
+            </Principal>
+            <Dependent Role="Organism">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationUser_Notification">
+          <End Type="Model_Namespace.Notification" Role="Notification" Multiplicity="0..1" />
+          <End Type="Model_Namespace.Notification_User" Role="Notification_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notification">
+              <PropertyRef Name="NotificationID" />
+            </Principal>
+            <Dependent Role="Notification_User">
+              <PropertyRef Name="NotificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationUser_User">
+          <End Type="Model_Namespace.User" Role="User" Multiplicity="0..1" />
+          <End Type="Model_Namespace.Notification_User" Role="Notification_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Notification_User">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_OrganismTypes">
+          <End Type="Model_Namespace.OrganismType" Role="OrganismType" Multiplicity="1" />
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrganismType">
+              <PropertyRef Name="OrganismTypeID" />
+            </Principal>
+            <Dependent Role="Organism">
+              <PropertyRef Name="OrganismTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_ProjectOrganisms">
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="1" />
+          <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organism">
+              <PropertyRef Name="OrganismID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="OrganismID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisms_ScientificNames">
+          <End Type="Model_Namespace.ScientificName" Role="ScientificName" Multiplicity="1" />
+          <End Type="Model_Namespace.Organism" Role="Organism" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScientificName">
+              <PropertyRef Name="ScientificNameID" />
+            </Principal>
+            <Dependent Role="Organism">
+              <PropertyRef Name="ScientificNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerimeterPoints_Perimeters1">
+          <End Type="Model_Namespace.Perimeter" Role="Perimeter" Multiplicity="1" />
+          <End Type="Model_Namespace.PerimeterPoint" Role="PerimeterPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perimeter">
+              <PropertyRef Name="PerimeterID" />
+            </Principal>
+            <Dependent Role="PerimeterPoint">
+              <PropertyRef Name="PerimeterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_Perimeters">
+          <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model_Namespace.Perimeter" Role="Perimeter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Perimeter">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Organisms_TreeDetails">
+          <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="1" />
+          <End Type="Model_Namespace.TreeDetail" Role="TreeDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_Organisms">
+              <PropertyRef Name="ProjectOrganismID" />
+            </Principal>
+            <Dependent Role="TreeDetail">
+              <PropertyRef Name="ProjectOrganismID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectOrganisms">
+          <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model_Namespace.Project_Organisms" Role="Project_Organisms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Project_Organisms">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectInfo">
+          <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model_Namespace.ProjectInfo" Role="ProjectInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectInfo">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectInfoTreeLocation">
+          <End Type="Model_Namespace.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model_Namespace.ProjectInfoTreeLocation" Role="ProjectInfoTreeLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectInfoTreeLocation">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleUsers_Roles">
+          <End Type="Model_Namespace.Role" Role="Role" Multiplicity="1" />
+          <End Type="Model_Namespace.Role_Users" Role="Role_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Role_Users">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoleUsers_Users">
+          <End Type="Model_Namespace.User" Role="User" Multiplicity="1" />
+          <End Type="Model_Namespace.Role_Users" Role="Role_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Role_Users">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tokens_TokenType">
+          <End Type="Model_Namespace.TokenType" Role="TokenType" Multiplicity="1" />
+          <End Type="Model_Namespace.Token" Role="Token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TokenType">
+              <PropertyRef Name="TokenTypeID" />
+            </Principal>
+            <Dependent Role="Token">
+              <PropertyRef Name="TokenTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UserInfo">
+          <End Type="Model_Namespace.User" Role="User" Multiplicity="1" />
+          <End Type="Model_Namespace.UserInfo" Role="UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeDB_Model_NSStoreContainer" CdmEntityContainer="DatabaseContext">
+          <EntitySetMapping Name="ActionProposeds">
+            <EntityTypeMapping TypeName="Model_Namespace.ActionProposed">
+              <MappingFragment StoreEntitySet="ActionProposed">
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+                <ScalarProperty Name="ActionProposedDesc" ColumnName="ActionProposedDesc" />
+                <ScalarProperty Name="ActionProposedID" ColumnName="ActionProposedID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Application_Groups">
+            <EntityTypeMapping TypeName="Model_Namespace.Application_Groups">
+              <MappingFragment StoreEntitySet="Application_Groups">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="ApplicationGroupID" ColumnName="ApplicationGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="Model_Namespace.Application">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="Model_Namespace.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colors">
+            <EntityTypeMapping TypeName="Model_Namespace.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ColorDesc" ColumnName="ColorDesc" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonNames">
+            <EntityTypeMapping TypeName="Model_Namespace.CommonName">
+              <MappingFragment StoreEntitySet="CommonNames">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CommonNameDesc" ColumnName="CommonNameDesc" />
+                <ScalarProperty Name="CommonNameID" ColumnName="CommonNameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Conditions">
+            <EntityTypeMapping TypeName="Model_Namespace.Condition">
+              <MappingFragment StoreEntitySet="Condition">
+                <ScalarProperty Name="ConditionDesc" ColumnName="ConditionDesc" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Daps">
+            <EntityTypeMapping TypeName="Model_Namespace.Dap">
+              <MappingFragment StoreEntitySet="Daps">
+                <ScalarProperty Name="DapValue" ColumnName="DapValue" />
+                <ScalarProperty Name="TreeDetailsID" ColumnName="TreeDetailsID" />
+                <ScalarProperty Name="DapID" ColumnName="DapID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="Model_Namespace.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DeviceKey" ColumnName="DeviceKey" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_Projects">
+            <EntityTypeMapping TypeName="Model_Namespace.Group_Projects">
+              <MappingFragment StoreEntitySet="Group_Projects">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupProjectID" ColumnName="GroupProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_Users">
+            <EntityTypeMapping TypeName="Model_Namespace.Group_Users">
+              <MappingFragment StoreEntitySet="Group_Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupUserID" ColumnName="GroupUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="Model_Namespace.Group">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notification_User">
+            <EntityTypeMapping TypeName="Model_Namespace.Notification_User">
+              <MappingFragment StoreEntitySet="Notification_User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+                <ScalarProperty Name="NotificationUserID" ColumnName="NotificationUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="Model_Namespace.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="NotificationSubject" ColumnName="NotificationSubject" />
+                <ScalarProperty Name="NotificationDesc" ColumnName="NotificationDesc" />
+                <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organisms">
+            <EntityTypeMapping TypeName="Model_Namespace.Organism">
+              <MappingFragment StoreEntitySet="Organisms">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+                <ScalarProperty Name="CommonNameID" ColumnName="CommonNameID" />
+                <ScalarProperty Name="ScientificNameID" ColumnName="ScientificNameID" />
+                <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganismTypes">
+            <EntityTypeMapping TypeName="Model_Namespace.OrganismType">
+              <MappingFragment StoreEntitySet="OrganismTypes">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OrganismTypeName" ColumnName="OrganismTypeName" />
+                <ScalarProperty Name="OrganismTypeID" ColumnName="OrganismTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerimeterPoints">
+            <EntityTypeMapping TypeName="Model_Namespace.PerimeterPoint">
+              <MappingFragment StoreEntitySet="PerimeterPoints">
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="PerimeterID" ColumnName="PerimeterID" />
+                <ScalarProperty Name="PerimeterPointID" ColumnName="PerimeterPointID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perimeters">
+            <EntityTypeMapping TypeName="Model_Namespace.Perimeter">
+              <MappingFragment StoreEntitySet="Perimeters">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsMainPerimeter" ColumnName="IsMainPerimeter" />
+                <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+                <ScalarProperty Name="PerimeterName" ColumnName="PerimeterName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="PerimeterID" ColumnName="PerimeterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Organisms">
+            <EntityTypeMapping TypeName="Model_Namespace.Project_Organisms">
+              <MappingFragment StoreEntitySet="Project_Organisms">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="OrganismID" ColumnName="OrganismID" />
+                <ScalarProperty Name="ProjectOrganismID" ColumnName="ProjectOrganismID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectInfoes">
+            <EntityTypeMapping TypeName="Model_Namespace.ProjectInfo">
+              <MappingFragment StoreEntitySet="ProjectInfo">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectInfoID" ColumnName="ProjectInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectInfoTreeLocations">
+            <EntityTypeMapping TypeName="Model_Namespace.ProjectInfoTreeLocation">
+              <MappingFragment StoreEntitySet="ProjectInfoTreeLocation">
+                <ScalarProperty Name="PreviouslyImpacted" ColumnName="PreviouslyImpacted" />
+                <ScalarProperty Name="Mitigation" ColumnName="Mitigation" />
+                <ScalarProperty Name="SocialInterest" ColumnName="SocialInterest" />
+                <ScalarProperty Name="Lots3" ColumnName="Lots3" />
+                <ScalarProperty Name="Lots2" ColumnName="Lots2" />
+                <ScalarProperty Name="Lots1" ColumnName="Lots1" />
+                <ScalarProperty Name="Lots0" ColumnName="Lots0" />
+                <ScalarProperty Name="DistanceBetweenTrees" ColumnName="DistanceBetweenTrees" />
+                <ScalarProperty Name="Acres" ColumnName="Acres" />
+                <ScalarProperty Name="Parkings" ColumnName="Parkings" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectInfoTreeLocationID" ColumnName="ProjectInfoTreeLocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="Model_Namespace.Project">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reps">
+            <EntityTypeMapping TypeName="Model_Namespace.Rep">
+              <MappingFragment StoreEntitySet="Reps">
+                <ScalarProperty Name="RepName" ColumnName="RepName" />
+                <ScalarProperty Name="RepID" ColumnName="RepID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_Users">
+            <EntityTypeMapping TypeName="Model_Namespace.Role_Users">
+              <MappingFragment StoreEntitySet="Role_Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleUserID" ColumnName="RoleUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Model_Namespace.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScientificNames">
+            <EntityTypeMapping TypeName="Model_Namespace.ScientificName">
+              <MappingFragment StoreEntitySet="ScientificNames">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ScientificNameDesc" ColumnName="ScientificNameDesc" />
+                <ScalarProperty Name="ScientificNameID" ColumnName="ScientificNameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TermsAndConditions">
+            <EntityTypeMapping TypeName="Model_Namespace.TermsAndCondition">
+              <MappingFragment StoreEntitySet="TermsAndConditions">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="TermsAndConditionsInnerText" ColumnName="TermsAndConditionsInnerText" />
+                <ScalarProperty Name="TermsAndConditionsID" ColumnName="TermsAndConditionsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tokens">
+            <EntityTypeMapping TypeName="Model_Namespace.Token">
+              <MappingFragment StoreEntitySet="Tokens">
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="TokenTypeID" ColumnName="TokenTypeID" />
+                <ScalarProperty Name="RequestTokenKey" ColumnName="RequestTokenKey" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TokenKey" ColumnName="TokenKey" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TokenTypes">
+            <EntityTypeMapping TypeName="Model_Namespace.TokenType">
+              <MappingFragment StoreEntitySet="TokenType">
+                <ScalarProperty Name="TokenTypeName" ColumnName="TokenTypeName" />
+                <ScalarProperty Name="TokenTypeID" ColumnName="TokenTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TreeDetails">
+            <EntityTypeMapping TypeName="Model_Namespace.TreeDetail">
+              <MappingFragment StoreEntitySet="TreeDetails">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Commentary" ColumnName="Commentary" />
+                <ScalarProperty Name="MaritimeZone" ColumnName="MaritimeZone" />
+                <ScalarProperty Name="Littoral" ColumnName="Littoral" />
+                <ScalarProperty Name="ActionProposedID" ColumnName="ActionProposedID" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="Varas" ColumnName="Varas" />
+                <ScalarProperty Name="Dap_Counter" ColumnName="Dap_Counter" />
+                <ScalarProperty Name="Dap" ColumnName="Dap" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="ProjectOrganismID" ColumnName="ProjectOrganismID" />
+                <ScalarProperty Name="TreeDetailsID" ColumnName="TreeDetailsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="Model_Namespace.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="PhoneExtension" ColumnName="PhoneExtension" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="License" ColumnName="License" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SecondLastName" ColumnName="SecondLastName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserInfoID" ColumnName="UserInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model_Namespace.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="EditorUserID" ColumnName="EditorUserID" />
+                <ScalarProperty Name="EditedDate" ColumnName="EditedDate" />
+                <ScalarProperty Name="CreatorUserID" ColumnName="CreatorUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+                <ScalarProperty Name="IsChangePassword" ColumnName="IsChangePassword" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsOnLine" ColumnName="IsOnLine" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DatabaseContext" ZoomLevel="72" ShowGrid="false" SnapToGrid="false" DisplayType="true">
+        <EntityTypeShape EntityType="Model_Namespace.ActionProposed" Width="1.5" PointX="6.000001000000001" PointY="28.357236328124991" />
+        <EntityTypeShape EntityType="Model_Namespace.Application_Groups" Width="1.5" PointX="6.000001000000001" PointY="20.530078124999989" />
+        <EntityTypeShape EntityType="Model_Namespace.Application" Width="1.5" PointX="3.750001000000001" PointY="31.722379557291664" />
+        <EntityTypeShape EntityType="Model_Namespace.City" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="9.3377766927083243" />
+        <EntityTypeShape EntityType="Model_Namespace.Color" Width="1.5" PointX="3.750001000000001" PointY="28.357236328124991" />
+        <EntityTypeShape EntityType="Model_Namespace.CommonName" Width="1.5" PointX="1.5000005000000005" PointY="28.864889322916667" />
+        <EntityTypeShape EntityType="Model_Namespace.Condition" Width="1.5" PointX="6.000001000000001" PointY="10.087522786458321" />
+        <EntityTypeShape EntityType="Model_Namespace.Dap" Width="1.5" PointX="10.500001000000001" PointY="13.626228841145824" />
+        <EntityTypeShape EntityType="Model_Namespace.Device" Width="1.5" PointX="5.7500005000000005" PointY="6.9851341145833157" />
+        <EntityTypeShape EntityType="Model_Namespace.Group_Projects" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="13.53007812499999" />
+        <EntityTypeShape EntityType="Model_Namespace.Group_Users" Width="1.5" PointX="18.0000005" PointY="15.418749267578114" />
+        <EntityTypeShape EntityType="Model_Namespace.Group" Width="1.5000000000000002" PointX="0.7500005000000004" PointY="16.953173828124996" />
+        <EntityTypeShape EntityType="Model_Namespace.Notification_User" Width="1.5" PointX="18.0000005" PointY="12.226447835286448" />
+        <EntityTypeShape EntityType="Model_Namespace.Notification" Width="1.5" PointX="15.750000499999999" PointY="16.130297119140614" />
+        <EntityTypeShape EntityType="Model_Namespace.Organism" Width="1.5" PointX="3.7500005000000005" PointY="1.6647216796874922" />
+        <EntityTypeShape EntityType="Model_Namespace.OrganismType" Width="1.5" PointX="1.5000005000000005" PointY="0.75" />
+        <EntityTypeShape EntityType="Model_Namespace.PerimeterPoint" Width="1.5" PointX="5.2500005000000005" PointY="17.530078124999996" />
+        <EntityTypeShape EntityType="Model_Namespace.Perimeter" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="16.85702311197916" />
+        <EntityTypeShape EntityType="Model_Namespace.Project_Organisms" Width="1.5" PointX="6.0000005000000005" PointY="13.049324544270824" />
+        <EntityTypeShape EntityType="Model_Namespace.ProjectInfo" Width="1.5000000000000004" PointX="3.0000005000000005" PointY="8.6647216796874922" />
+        <EntityTypeShape EntityType="Model_Namespace.ProjectInfoTreeLocation" Width="1.5" PointX="3" PointY="23.25934895833332" />
+        <EntityTypeShape EntityType="Model_Namespace.Project" Width="1.5" PointX="0.75" PointY="13.049324544270824" />
+        <EntityTypeShape EntityType="Model_Namespace.Rep" Width="1.5" PointX="7.75" PointY="6.3784415690104" />
+        <EntityTypeShape EntityType="Model_Namespace.Role_Users" Width="1.4999999999999982" PointX="15.000000499999999" PointY="6.7496811523437383" />
+        <EntityTypeShape EntityType="Model_Namespace.Role" Width="1.5" PointX="12.750000499999999" PointY="3.9419825846354026" />
+        <EntityTypeShape EntityType="Model_Namespace.ScientificName" Width="1.5" PointX="1.5000005000000005" PointY="4.635110677083329" />
+        <EntityTypeShape EntityType="Model_Namespace.TermsAndCondition" Width="1.5" PointX="9.75" PointY="6.3784415690104" />
+        <EntityTypeShape EntityType="Model_Namespace.Token" Width="1.5" PointX="8.0000005" PointY="2.6005312499999835" />
+        <EntityTypeShape EntityType="Model_Namespace.TokenType" Width="1.5" PointX="5.75" PointY="3.2735862630208175" />
+        <EntityTypeShape EntityType="Model_Namespace.TreeDetail" Width="1.5" PointX="8.250001000000001" PointY="11.703214518229157" />
+        <EntityTypeShape EntityType="Model_Namespace.UserInfo" Width="1.5" PointX="15" PointY="10.133857584635402" />
+        <EntityTypeShape EntityType="Model_Namespace.User" Width="1.5" PointX="12.75" PointY="6.7305161132812383" />
+        <AssociationConnector Association="Model_Namespace.FK_ActionProposed_Color" />
+        <AssociationConnector Association="Model_Namespace.FK_TreeDetails_ActionProposed" />
+        <AssociationConnector Association="Model_Namespace.FK_ApplicationGroups_Applications" />
+        <AssociationConnector Association="Model_Namespace.FK_ApplicationGroups_Groups" />
+        <AssociationConnector Association="Model_Namespace.FK_ProjectInfo_City" />
+        <AssociationConnector Association="Model_Namespace.FK_Perimeters_Color" />
+        <AssociationConnector Association="Model_Namespace.FK_Organisms_CommonNames" />
+        <AssociationConnector Association="Model_Namespace.FK_TreeDetails_Condition" />
+        <AssociationConnector Association="Model_Namespace.FK_TreeDetails_Daps" />
+        <AssociationConnector Association="Model_Namespace.FK_Tokens_Device" />
+        <AssociationConnector Association="Model_Namespace.FK_GroupProjects_Groups" />
+        <AssociationConnector Association="Model_Namespace.FK_GroupProjects_Projects" />
+        <AssociationConnector Association="Model_Namespace.FK_GroupsUsers_Groups" />
+        <AssociationConnector Association="Model_Namespace.FK_GroupsUsers_Users" />
+        <AssociationConnector Association="Model_Namespace.FK_NotificationUser_Group" />
+        <AssociationConnector Association="Model_Namespace.FK_Organisms_Groups" />
+        <AssociationConnector Association="Model_Namespace.FK_NotificationUser_Notification" />
+        <AssociationConnector Association="Model_Namespace.FK_NotificationUser_User" />
+        <AssociationConnector Association="Model_Namespace.FK_Organisms_OrganismTypes" />
+        <AssociationConnector Association="Model_Namespace.FK_Organisms_ProjectOrganisms" />
+        <AssociationConnector Association="Model_Namespace.FK_Organisms_ScientificNames" />
+        <AssociationConnector Association="Model_Namespace.FK_PerimeterPoints_Perimeters1" />
+        <AssociationConnector Association="Model_Namespace.FK_Projects_Perimeters" />
+        <AssociationConnector Association="Model_Namespace.FK_Project_Organisms_TreeDetails" />
+        <AssociationConnector Association="Model_Namespace.FK_Projects_ProjectOrganisms" />
+        <AssociationConnector Association="Model_Namespace.FK_Projects_ProjectInfo" />
+        <AssociationConnector Association="Model_Namespace.FK_Projects_ProjectInfoTreeLocation" />
+        <AssociationConnector Association="Model_Namespace.FK_RoleUsers_Roles" />
+        <AssociationConnector Association="Model_Namespace.FK_RoleUsers_Users" />
+        <AssociationConnector Association="Model_Namespace.FK_Tokens_TokenType" />
+        <AssociationConnector Association="Model_Namespace.FK_Users_UserInfo" />
+      </Diagram></Diagrams>
+  </Designer>
+</edmx:Edmx>
