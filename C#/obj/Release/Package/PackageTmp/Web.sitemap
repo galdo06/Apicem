@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/default.aspx" title="Root"   description="Root">
+    <siteMapNode url="~/secured/admin/admin_default.aspx?"  title="Área Administrativa"  description="Área Administrativa">
+      <siteMapNode url="~/secured/admin/scientificnames.aspx" title="Nombres Científicos" description="Nombres Científicos" />
+      <siteMapNode url="~/secured/admin/users.aspx" title="Usuarios" description="Usuarios"/>
+      <siteMapNode url="~/secured/admin/groups.aspx" title="Grupos" description="Grupos"/>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

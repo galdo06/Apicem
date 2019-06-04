@@ -1,0 +1,59 @@
+﻿
+.allColumn {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.divreglamento {
+    padding: 0;
+    margin: 0;
+}
+
+.reglamento {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.reglamentoRowHeight {
+    height: 60px;
+}
+
+.rowHeight {
+    height: 30px;
+}
+
+.capitulo {
+    vertical-align: top;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.firstColumn {
+    width: 114px;
+}
+
+.secondColumn {
+    width: 601px;
+}
+
+.regla {
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.seccion {
+    vertical-align: top; 
+    font-weight: bold;
+    margin-top: 5px;
+}

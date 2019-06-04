@@ -1,0 +1,5 @@
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\C#\bin\Eisk.Web.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\C#\bin\Eisk.Web.pdb
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\C#\obj\Debug\Eisk.Web.csprojResolveAssemblyReference.cache
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\C#\obj\Debug\Eisk.Web.dll
+C:\Users\Galdo\Documents\Visual Studio 2012\Projects\Eisk\C#\obj\Debug\Eisk.Web.pdb

@@ -1,0 +1,59 @@
+﻿ul#menu2 *
+{
+    outline: none;
+}
+ul#menu2
+{
+    text-align: left;
+}
+ul#menu2, ul#menu2 ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15em;
+}
+
+ul#menu2 a
+{
+    display: block;
+    text-decoration: none;
+}
+
+ul#menu2 li
+{
+    margin-top: 1px;
+}
+
+ul#menu2 li a
+{
+    background-color: #D6E7F1;
+    color: #000;
+    padding: 0.5em;
+}
+
+ul#menu2 li a:hover,
+{
+    background-color: #c3dae6 !important;
+}
+
+ul#menu2 li ul li a
+{
+    background-color: #f0f9ff;
+    color: #000;
+}
+
+ul#menu2 li ul li a:hover
+{
+    background-color: #e1f4fd !important;
+    border-left: 5px #99C4DF solid;
+    padding-left: 15px;
+}
+
+ul#menu2 .SelectedNode
+{
+    background-color: #C2E0EF !important;
+    border-left: 5px #99C4DF solid;
+    padding-left: 15px;
+}
+

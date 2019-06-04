@@ -1,0 +1,5 @@
+===================================================================
+Error Log File
+This file will be automatically updated during every error happened in the system.
+
+===================================================================
